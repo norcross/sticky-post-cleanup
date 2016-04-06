@@ -2,7 +2,7 @@
 /**
  * Set up and load our class.
  */
-class StickyPostCleanup_Admin
+class STKCL_Admin
 {
 
 	/**
@@ -18,7 +18,7 @@ class StickyPostCleanup_Admin
 }
 
 // Instantiate our class
-$StickyPostCleanup_Admin = new StickyPostCleanup_Admin();
-$StickyPostCleanup_Admin->init();
+$STKCL_Admin = new STKCL_Admin();
+$STKCL_Admin->init();
 
 

@@ -2,7 +2,7 @@
 /**
  * Set up and load our class.
  */
-class StickyPostCleanup_Crons
+class STKCL_Crons
 {
 
 	/**
@@ -27,7 +27,7 @@ class StickyPostCleanup_Crons
 }
 
 // Instantiate our class
-$StickyPostCleanup_Crons = new StickyPostCleanup_Crons();
-$StickyPostCleanup_Crons->init();
+$STKCL_Crons = new STKCL_Crons();
+$STKCL_Crons->init();
 
 
