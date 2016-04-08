@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sticky Post Cleanup
  * Plugin URI: https://github.com/norcross/sticky-post-cleanup
- * Description: Set an automatic expiration length to sticky posts.
+ * Description: Set an automatic expiration date to sticky posts.
  * Author: Andrew Norcross
  * Author URI: http://reaktivstudios.com/
  * Version: 0.0.1
@@ -82,9 +82,12 @@ class StickyPostCleanup
 	 */
 	public function schedule_crons() {
 
+		// Set my frequency.
+		$frequency  = apply_filters( 'stickypost_cleanup_frequency', 'twicedaily' );
+
 		// Set our scheduled cron job if it isn't there already.
 		if ( ! wp_next_scheduled( 'sticky_cleanup' ) ) {
-			wp_schedule_event( time(), 'twicedaily', 'sticky_cleanup' );
+			wp_schedule_event( time(), $frequency, 'sticky_cleanup' );
 		}
 	}
 
