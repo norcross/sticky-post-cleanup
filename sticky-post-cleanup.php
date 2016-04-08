@@ -70,6 +70,9 @@ class StickyPostCleanup
 
 		// Load our cron file.
 		require_once( 'lib/cron.php' );
+
+		// Load our data file.
+		require_once( 'lib/data.php' );
 	}
 
 	/**
@@ -97,33 +100,6 @@ class StickyPostCleanup
 
 		// Remove the jobs.
 		wp_unschedule_event( $stamp, 'sticky_cleanup', array() );
-	}
-
-	/**
-	 * Fetch an option from the database with a default fallback.
-	 *
-	 * @param  string $key      The option key.
-	 * @param  string $default  A default value.
-	 *
-	 * @return mixed  $option   Either the found info, or false.
-	 */
-	public function get_single_option( $key = '', $default = '' ) {
-
-		// Bail without a key.
-		if ( empty( $key ) ) {
-			return false;
-		}
-
-		// Fetch the option.
-		$option = get_option( $key, $default );
-
-		// Bail if no option is found, and no default was set.
-		if ( empty( $option ) && empty( $default ) ) {
-			return false;
-		}
-
-		// Return whichever one we have.
-		return ! empty( $option ) ? $option : $default;
 	}
 
 	// End the class.
