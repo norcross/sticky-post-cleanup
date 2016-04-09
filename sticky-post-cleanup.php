@@ -5,7 +5,7 @@
  * Description: Set an automatic expiration date to sticky posts.
  * Author: Andrew Norcross
  * Author URI: http://reaktivstudios.com/
- * Version: 0.0.1
+ * Version: 0.0.2
  * Text Domain: sticky-post-cleanup
  * Domain Path: languages
  * License: MIT
@@ -24,7 +24,7 @@ if ( ! defined( 'STKCL_DIR' ) ) {
 
 // Set my version for the plugin.
 if ( ! defined( 'STKCL_VER' ) ) {
-	define( 'STKCL_VER', '0.0.1' );
+	define( 'STKCL_VER', '0.0.2' );
 }
 
 /**
@@ -97,6 +97,10 @@ class StickyPostCleanup
 	 * @return void
 	 */
 	public function remove_crons() {
+
+		// Delete our stored options.
+		delete_option( 'stickyclean' );
+		delete_option( 'stickyclean_list' );
 
 		// Fetch the timestamp.
 		$stamp  = wp_next_scheduled( 'sticky_cleanup' );

@@ -5,7 +5,7 @@ Donate link: https://andrewnorcross.com/donate
 Tags: sticky posts
 Requires at least: 4.4
 Tested up to: 4.5
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 License: MIT
 License URI: http://norcross.mit-license.org/
 
@@ -39,6 +39,9 @@ Because you're still using sticky posts for some reason.
 
 
 == Changelog ==
+
+= 0.0.2 - 2016/04/09
+* Delete keys on plugin deactivation.
 
 = 0.0.1 - 2016/04/08
 * Initial release.
